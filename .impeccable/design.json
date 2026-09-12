@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T14:27:00Z",
+  "title": "Design System: Gunite Pools Renovations",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Ocean Blue", "canonical": "#0b6eb3" },
+      "secondary": { "role": "secondary", "displayName": "Deep Navy", "canonical": "#1c1367" },
+      "accent-gold": { "role": "accent", "displayName": "Accent Gold", "canonical": "#f59e0b" },
+      "neutral-bg": { "role": "neutral", "displayName": "Background Light", "canonical": "#f4f7fb" },
+      "neutral-surface": { "role": "neutral", "displayName": "Background White", "canonical": "#ffffff" }
+    },
+    "shadows": [
+      { "name": "shadow-sm", "value": "0 2px 8px rgba(28, 19, 103, 0.06)", "purpose": "Card rest state shadow." },
+      { "name": "shadow-md", "value": "0 10px 25px rgba(28, 19, 103, 0.08)", "purpose": "Header and trust bar floating shadow." },
+      { "name": "shadow-lg", "value": "0 15px 35px rgba(28, 19, 103, 0.12)", "purpose": "Visualizer and gallery container shadow." },
+      { "name": "shadow-hover", "value": "0 20px 40px rgba(11, 110, 179, 0.18)", "purpose": "Interactive hover state glow." }
+    ],
+    "motion": [
+      { "name": "transition-standard", "value": "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default smooth interactive transition." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action CTA button for request quotes and free estimates.",
+      "html": "<button class=\"ds-btn-primary\">REQUEST FREE ESTIMATE</button>",
+      "css": ".ds-btn-primary { background: #0b6eb3; color: #ffffff; padding: 14px 28px; border-radius: 50px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(11, 110, 179, 0.3); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #08558c; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(11, 110, 179, 0.45); }"
+    },
+    {
+      "name": "White Call Button",
+      "kind": "button",
+      "refersTo": "button-white",
+      "description": "High contrast white action button for direct phone hotline calling.",
+      "html": "<button class=\"ds-btn-white\">CALL NOW (978) 596-4103</button>",
+      "css": ".ds-btn-white { background: #ffffff; color: #1c1367; padding: 14px 28px; border-radius: 50px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-white:hover { background: #e6f3fa; color: #0b6eb3; transform: translateY(-2px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Coastal Crystal Oasis",
+    "overview": "Gunite Pools Renovations uses a vibrant, high-trust coastal aesthetic tailored for New England homeowners and commercial pool operators. The atmosphere combines deep nautical navy tones, luminous sky-blue reflections, crisp white card containers, and warm gold CTA highlights.",
+    "keyCharacteristics": [
+      "High-Trust Contrast: Deep navy headers and section anchors offset by bright ocean blue primary actions.",
+      "Pill & Curve Forms: Soft rounded pill buttons (50px radius) and rounded card corners (20px).",
+      "Interactive Visual Proof: Embedded touch-friendly Before & After comparison slider and live texture simulator.",
+      "Direct Accessibility: Clear contact hotline and regional coverage tags accessible from any viewport."
+    ],
+    "rules": [
+      { "name": "The Rarity of Gold Rule", "body": "Gold (#f59e0b) is reserved strictly for high-value trust badges and phone call highlights. It never replaces primary button fills.", "section": "colors" }
+    ],
+    "dos": [
+      "Do use assets/logo.png in circular brand containers for header and footer logos.",
+      "Do maintain smooth CSS transitions (all 0.3s cubic-bezier(0.16, 1, 0.3, 1)) on interactive components.",
+      "Do ensure phone numbers ((978) 596-4103) and email (poolsrenovation@hotmail.com) are linked via tel: and mailto: protocols."
+    ],
+    "donts": [
+      "Don't use sharp 0px corners on interactive buttons or service cards.",
+      "Don't re-introduce the 15+ years experience badge or estimate calculator section.",
+      "Don't use generic default blue colors; always use the design system's --ocean-blue (#0b6eb3) and --navy-primary (#1c1367)."
+    ]
+  }
+}
