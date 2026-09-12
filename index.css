@@ -1134,21 +1134,31 @@ img {
   font-size: 0.85rem;
 }
 
-/* Responsive Rules */
+/* Responsive Rules & Adaptation */
+@media (max-width: 1024px) {
+  .service-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+}
+
 @media (max-width: 992px) {
-  .service-cards-grid { grid-template-columns: 1fr; }
   .feature-side { grid-template-columns: 1fr; }
   .vis-layout { grid-template-columns: 1fr; }
-  .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .ig-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero h1 { font-size: 2.5rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
 }
 
 @media (max-width: 768px) {
+  .service-cards-grid { grid-template-columns: 1fr; }
   .topbar { display: none; }
-  .mobile-toggle { display: block; }
+  .mobile-toggle { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-width: 44px; 
+    min-height: 44px; 
+  }
   
   .nav-links {
     position: absolute;
@@ -1166,11 +1176,44 @@ img {
 
   .nav-links.active { display: flex; }
 
-  .hero h1 { font-size: 2rem; }
+  .hero { padding: 6rem 0 5rem; }
+  .hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
   .trust-grid { grid-template-columns: 1fr; }
-  .options-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .ba-container { height: 350px; }
+  .ba-container { height: 320px; }
   .checker-flex { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .ig-grid { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; width: 100%; }
+  .hero-btns .btn { width: 100%; }
+  .vis-tabs { flex-direction: column; width: 100%; }
+  .vis-tab { width: 100%; justify-content: center; }
+}
+
+/* Touch & Coarse Pointer Adaptations */
+@media (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+  .nav-links a {
+    padding: 0.6rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Safe Area Insets for Modern Mobile Devices */
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.footer {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
 }
